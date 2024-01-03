@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.26)
 
+project(ECGLIB)
+
+enable_language(CUDA)
+
 set(CMAKE_CXX_STANDARD 17)
 
 set(ECG_HEADER_FILES
     convex_hull/ConvexHull.hpp
     convex_hull/SimpleConvexHull.hpp
-        base/types.hpp
+    base/types.hpp
 )
 
 set(ECG_SOURCE_FILES
