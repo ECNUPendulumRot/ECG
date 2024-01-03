@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.26)
 
 project(ECGLIB)
 
-enable_language(CUDA)
-
 set(CMAKE_CXX_STANDARD 17)
 
 set(ECG_HEADER_FILES
