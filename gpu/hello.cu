@@ -3,12 +3,18 @@
 
 __global__ void hello_from_gpu()
 {
-    printf("Hello World from GPU!\n");
+    const int bid = blockIdx.x;
+    const int tx = threadIdx.x;
+    const int ty = threadIdx.y;
+
+    printf("Hello World from block %d and thread (%d, %d)!\n", bid, tx, ty);
 }
 
 
 int main()
 {
-    printf("Hello World!\n");
+    const dim3 block_size(2, 4);
+    hello_from_gpu<<<1, block_size>>>();
+    cudaDeviceSynchronize();
     return 0;
 }
