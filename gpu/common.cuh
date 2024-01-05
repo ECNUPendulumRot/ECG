@@ -1,8 +1,10 @@
 
-#ifndef ECG_ERROR_CUH
-#define ECG_ERROR_CUH
+#ifndef ECG_COMMON_CUH
+#define ECG_COMMON_CUH
+
 
 #include <cstdio>
+
 
 #define CHECK(call)                                                                                     \
 do {                                                                                                    \
@@ -14,4 +16,13 @@ do {                                                                            
     }                                                                                                   \
 } while (0)                                                                                             \
 
-#endif //ECG_ERROR_CUH
+
+#ifdef USE_DP
+    typedef double real;
+    const real EPSILON = 1e-15;
+#else
+    typedef float real;
+    const real EPSILON = 1.0e-6f;
+#endif
+
+#endif //ECG_COMMON_CUH

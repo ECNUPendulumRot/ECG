@@ -1,7 +1,7 @@
 #include <cmath>
 #include <cstdio>
 
-#include "error.cuh"
+#include "common.cuh"
 
 const double EPSILON = 1.0e-15;
 const double a = 1.23;
